@@ -1,4 +1,5 @@
 from analexico import tokenize
+from parser import Parser
 from pprint import pprint
 
 def main():
@@ -6,6 +7,9 @@ def main():
         entrada = f.read()
 
     tokens = tokenize(entrada)
+    parser = Parser(tokens)
+    ocorrencias = parser.parse_ocorrencias()
+
     pprint(ocorrencias)
 
 if __name__ == "__main__":
