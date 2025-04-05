@@ -1,14 +1,20 @@
-from analexico import tokenize
+from analexico import tokenizar
 from parser import Parser
 from pprint import pprint
 
 def main():
-    with open("exemplos/exemplo1.txt", "r", encoding="utf-8") as f:
+    nome_arquivo_txt = "ocorrencias.txt"
+    with open(nome_arquivo_txt, "r", encoding="utf-8") as f:
         entrada = f.read()
 
-    tokens = tokenize(entrada)
+
+    tokens = tokenizar(entrada)
     parser = Parser(tokens)
-    ocorrencias = parser.parse_ocorrencias()
+    try:
+        ocorrencias = parser.parse_ocorrencias()
+        print(" Análise sintática concluída com sucesso!")
+    except SyntaxError as e:
+        print(f" Erro de sintaxe: {e}")
 
     pprint(ocorrencias)
 
