@@ -8,7 +8,7 @@ token_rules = [             #tupla de expressões regulares e seus nomes
     ('ENVOLVIDOS', r'envolvidos:'),
     ('OBJETOS', r'objetos:'),
     ('NATUREZA', r'\b(furto|roubo|perda|ameaça|acidente|estelionato)\b'),
-    ('DATA_HORA', r'\d{2}/\d{2}/\d{2}(?:\s\d{2}:\d{2})?'),
+    ('DATA_HORA', r'\d{2}/\d{2}/\d{2,4}(?:\s+\d{2}:\d{2})?'),
     ('NEWLINE', r'\n'),
     ('TEXTO', r'[\wÀ-ÿ]+'),
     ('ESPACO', r'\s+'),
