@@ -10,8 +10,8 @@ token_rules = [             #tupla de expressões regulares e seus nomes
     ('NATUREZA', r'\b(furto|roubo|perda|ameaça|acidente|estelionato)\b'),
     ('DATA_HORA', r'\d{2}/\d{2}/\d{2,4}(?:\s+\d{2}:\d{2})?'),
     ('NEWLINE', r'\n'),
-    ('TEXTO', r'[\wÀ-ÿ]+'),
-    ('ESPACO', r'\s+'),
+    ('ESPACO', r'\s+'), 
+    ('TEXTO', r'[^:\n]+?(?=\s*(tipo:|data:|local:|relato:|\b(furto|roubo|perda|ameaça|acidente|estelionato)\b|envolvidos:|objetos:)|$)'),
 ]                                   #reparem que não tem OCORRENCIA, REGISTRO ou ENVOLVIDOS. Isso é pq são símbolos não terminais
                                        #logo, não se encaixam como tokens. Eles são gerados na hora de criar a árvore sintática
 
